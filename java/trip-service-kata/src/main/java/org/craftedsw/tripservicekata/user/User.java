@@ -7,27 +7,17 @@ import org.craftedsw.tripservicekata.trip.Trip;
 
 public class User {
 
+	//keeping trips for now since the domain states that
+	//a user has trips and friends
 	private List<Trip> trips = new ArrayList<Trip>();
+
 	private Friends friends = new Friends();
 
 	public boolean isFriendOf(User user) {
 		return friends.has(user);
 	}
 
-	public Friends getFriends() {
-		return friends;
-	}
-
 	public void addFriend(User user) {
 		friends.add(user);
 	}
-
-	public void addTrip(Trip trip) {
-		trips.add(trip);
-	}
-	
-	public List<Trip> trips() {
-		return trips;
-	}
-
 }
