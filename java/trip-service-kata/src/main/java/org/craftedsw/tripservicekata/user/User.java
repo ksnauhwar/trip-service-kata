@@ -8,23 +8,16 @@ import org.craftedsw.tripservicekata.trip.Trip;
 public class User {
 
 	private List<Trip> trips = new ArrayList<Trip>();
-	private List<User> friends = new ArrayList<User>();
+	private Friends friends = new Friends();
 
 	public boolean isFriendOf(User user) {
-		boolean isFriend = false;
-		for (User friend : getFriends()) {
-			if (friend.equals(user)) {
-				isFriend = true;
-				break;
-			}
-		}
-		return isFriend;
+		return friends.has(user);
 	}
 
-	public List<User> getFriends() {
+	public Friends getFriends() {
 		return friends;
 	}
-	
+
 	public void addFriend(User user) {
 		friends.add(user);
 	}
