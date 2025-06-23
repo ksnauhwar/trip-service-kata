@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FirendsUnitTests {
     @Test
-    public void shouldBeAFriendIfPresentInFriendsList() {
+    public void shouldBeAFriendIfAddedAsAFriends() {
         Friends friends = new Friends();
         User user = new User();
         friends.add(user);
@@ -15,7 +15,7 @@ public class FirendsUnitTests {
     }
 
     @Test
-    public void shouldNotBeAFriendIfPresentInFriendsList() {
+    public void shouldNotBeAFriendIfNotAddedAsAFriends() {
         Friends friends = new Friends();
         User user = new User();
         assertFalse(friends.has(user));
